@@ -3,24 +3,35 @@
 html {
   scroll-behavior: smooth;
   background-color: $primary-blue;
+  font-family: $font-stack;
+  font-weight: 300;
+  color: white;
 }
 
 body {
-  font-family: $font-stack;
   margin: 0;
   padding: 0;
 }
 
+h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  text-shadow: $text-shadow;
+  margin: 0;
+}
+
 h2 {
   color: $primary-blue;
-  font-weight: 300;
   text-align: center;
+  font-weight: 300;
+  margin-top: 64px;
 }
 
 h3 {
   font-size: 1.1rem;
   color: $primary-blue;  
   font-weight: 300;
+  padding-bottom: px;
 }  
 
 button {
@@ -29,19 +40,13 @@ button {
   border-radius: 20px;
   font-size: 1rem;
   background-color: $primary-blue;
-  color: white;
-  transition: 1s;
   border: none;
   margin: 15px;
+  transition: 1s;
+  color: white;
   &:hover {
-    background-color: darken($primary-blue, 10);
-    box-shadow: 1px 2px 2px 2px rgba(15,15,15,.7);
+    box-shadow: 1px 2px 2px 2px rgba(15,15,15,.5);
   }
-}
-
-input {
-  border: none;
-  border-radius: 16px;
 }
 
 #header {
@@ -53,7 +58,7 @@ input {
     position: absolute;
     top: 8px;
     left: 64px;
-    width: 100px;
+    width: 104px;
   }
   
   .menu {
@@ -68,15 +73,18 @@ input {
   
   .menu-top, .menu-bottom {
     list-style-type: none;
-    margin: 0;
+    margin: 0px 0px 8px 8px;
     padding: 0;
     display: flex;
     flex-flow: row;
     justify-content: flex-end;
   }
   
+  .menu-bottom {
+    text-transform: uppercase;
+  }
+  
   li {
-    color: white;
     padding-left: 32px;
     display: inline;
     &:hover {
@@ -86,12 +94,20 @@ input {
   
   li img {
     width: 20px;
+    &:hover {
+      background-color: $primary-blue;
+    }
   }
   
   #search-input {
     display: none;
-    height: 30px;
-    margin-left: 10px;
+    margin-left: 8px;
+    margin-top: -4px;
+    border: none;
+    border-radius: 16px;
+    vertical-align: text-top;
+    height: 20px;
+    background-color: rgba(255,255,255,.6);
   }
 }
 
@@ -109,30 +125,16 @@ input {
   height: 100vh;
   background-image: url("../images/main-bg.jpg");
   background-size: cover; 
-  top: 0;
   text-align: center;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  color: white;
-  
-  h1 {
-    font-size: 4rem;
-    font-weight: 300;
-    text-shadow: 1px 1px 2px black;
-    margin: 0;
-  }
+  justify-content: center;
   
   p {
-    font-weight: 300;
-    text-shadow: 1px 1px 2px black;
+    text-shadow: $text-shadow;
     width: 504px;
     margin: 0 auto;
     line-height: 2rem;
-  }
-  
-  .main-feature-buttons {
-    display: inline-block;
   }
   
   .primary-button {
@@ -145,14 +147,10 @@ input {
     border-radius: 50%;
     border: 1px solid white;
     position: absolute;
+    bottom: 30px;
     left: 0; 
     right: 0; 
-    bottom: 30px;
     margin: 0 auto;
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: .8rem;
   }
   
   .explore-word {
@@ -161,7 +159,10 @@ input {
     left: 0px;
     right: 0px;
     margin: 0 auto;
+    text-decoration: none;
+    text-transform: uppercase;
     font-size: .8rem;
+    color: white;
   }
   
   .explore-arrow {
@@ -182,35 +183,70 @@ input {
 #second-third-features {
   background-image: url("../images/blueconcert.jpg");
   background-size: cover;
+  margin-top: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   
+  p {
+    font-size: .9rem;
+  }
+  
   #whats-new {
+    width: 600px;
+    
+    .owl-carousel {
+        margin: 0 auto;
+    }
+    
+    .carousel-item {
+      background-color: $dark-gray;
+        img {
+          object-fit: cover;
+        }
+      
+      .carousel-text {
+        padding: 0px 16px 16px 16px;
+      }
+    }
+  
+    .owl-dot {
+      border-radius: 0;
+      width: 32px;
+      height: 16px;
+      margin: 8px;
+      border: none;
+      background-color: $dark-gray;
+      &.active {
+        background-color: $primary-blue;
+      }
+    }
   }
   
   #events-container {
     background-color: $primary-blue;
     transform: skewY(-6deg) scale(.9);
     padding: 40px 20px;
+    margin: 50px 0px;
+    height: 440px;
   }
   
-  #events {
+  .scroll-container {
+    margin-top: 16px;
     transform: skewY(6deg) scale(1);
+    height: 400px;
   }
   
   .event-item {
     background-color: $medium-gray;
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: 2fr 6fr;
     grid-column-gap: 16px;
-    margin: 20px;
+    margin: 0px 16px 16px 16px;
+    width: 100%;
     img {
       object-fit: cover;
       max-width: 100%;
       height: 100%;
-    }
-    p {
-      color: white;
     }
     .event-content {
       padding: 10px;
@@ -218,7 +254,6 @@ input {
   }
   
 }
-
 
 #fourth-feature {
   background-color: $primary-blue;
@@ -247,7 +282,6 @@ input {
 #footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: white;
   
   .footer-image-container {
     background-image: url("../images/footer-bg.jpg");
@@ -261,7 +295,7 @@ input {
     position: relative;
   }
   
-  img {
+  .footer-logo {
     width: 150px;
     margin: 0 auto;
   }
@@ -276,19 +310,17 @@ input {
     left: -32px;
     top: 45%;
     z-index: 999;
-    
   }
   
   ul {
     list-style: none;  
-    margin: 0;
     padding: 0;
-    margin-top: 20px;
+    margin: 30px 0px;
   }
   
   li {
     display: inline;
-    margin: 16px;
+    margin: 8px;
     text-transform: uppercase;
     &:hover {
       color: $primary-blue;
@@ -300,6 +332,10 @@ input {
     border: 2px solid $primary-orange;
     color: $primary-orange;
     margin: 0 auto;
+    &:hover {
+      background-color: $primary-orange;
+      color: white;
+    }
   }
 }
 
@@ -327,22 +363,32 @@ input {
   #second-third-features {
     grid-template-columns: 1fr;
     
+    #whats-new {
+      width: 100vw;
+    }
+    
     #events-container {
       transform: skewY(-6deg) scale(1);
+    }
+    .scroll-container {
       width: 100%;
-      margin: 0;
     }
   }
   
-  #footer {
+  #footer {    
     grid-template-columns: 1fr;
-       
+      
     .footer-divider {
       position: absolute;
       top: -32px;
       left: 0;
       right: 0;
       margin: 0 auto;
+    }
+    
+    .footer-image-container {
+      height: 360px;
+      width: 100%;
     }
     
     .footer-content-container {

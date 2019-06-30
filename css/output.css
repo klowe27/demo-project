@@ -1,24 +1,35 @@
 html {
   scroll-behavior: smooth;
   background-color: #0b78b1;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: white;
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
 }
 
+h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px black;
+  margin: 0;
+}
+
 h2 {
   color: #0b78b1;
-  font-weight: 300;
   text-align: center;
+  font-weight: 300;
+  margin-top: 64px;
 }
 
 h3 {
   font-size: 1.1rem;
   color: #0b78b1;
   font-weight: 300;
+  padding-bottom: px;
 }
 
 button {
@@ -27,19 +38,13 @@ button {
   border-radius: 20px;
   font-size: 1rem;
   background-color: #0b78b1;
-  color: white;
-  transition: 1s;
   border: none;
   margin: 15px;
+  transition: 1s;
+  color: white;
 }
 button:hover {
-  background-color: #085781;
-  box-shadow: 1px 2px 2px 2px rgba(15, 15, 15, 0.7);
-}
-
-input {
-  border: none;
-  border-radius: 16px;
+  box-shadow: 1px 2px 2px 2px rgba(15, 15, 15, 0.5);
 }
 
 #header {
@@ -51,7 +56,7 @@ input {
   position: absolute;
   top: 8px;
   left: 64px;
-  width: 100px;
+  width: 104px;
 }
 #header .menu {
   position: absolute;
@@ -63,14 +68,16 @@ input {
 }
 #header .menu-top, #header .menu-bottom {
   list-style-type: none;
-  margin: 0;
+  margin: 0px 0px 8px 8px;
   padding: 0;
   display: flex;
   flex-flow: row;
   justify-content: flex-end;
 }
+#header .menu-bottom {
+  text-transform: uppercase;
+}
 #header li {
-  color: white;
   padding-left: 32px;
   display: inline;
 }
@@ -80,10 +87,18 @@ input {
 #header li img {
   width: 20px;
 }
+#header li img:hover {
+  background-color: #0b78b1;
+}
 #header #search-input {
   display: none;
-  height: 30px;
-  margin-left: 10px;
+  margin-left: 8px;
+  margin-top: -4px;
+  border: none;
+  border-radius: 16px;
+  vertical-align: text-top;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .header {
@@ -100,28 +115,16 @@ input {
   height: 100vh;
   background-image: url("../images/main-bg.jpg");
   background-size: cover;
-  top: 0;
   text-align: center;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  color: white;
-}
-#main-feature h1 {
-  font-size: 4rem;
-  font-weight: 300;
-  text-shadow: 1px 1px 2px black;
-  margin: 0;
+  justify-content: center;
 }
 #main-feature p {
-  font-weight: 300;
   text-shadow: 1px 1px 2px black;
   width: 504px;
   margin: 0 auto;
   line-height: 2rem;
-}
-#main-feature .main-feature-buttons {
-  display: inline-block;
 }
 #main-feature .primary-button {
   background-color: #f06923;
@@ -132,14 +135,10 @@ input {
   border-radius: 50%;
   border: 1px solid white;
   position: absolute;
+  bottom: 30px;
   left: 0;
   right: 0;
-  bottom: 30px;
   margin: 0 auto;
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 0.8rem;
 }
 #main-feature .explore-word {
   position: absolute;
@@ -147,7 +146,10 @@ input {
   left: 0px;
   right: 0px;
   margin: 0 auto;
+  text-decoration: none;
+  text-transform: uppercase;
   font-size: 0.8rem;
+  color: white;
 }
 #main-feature .explore-arrow {
   width: 12px;
@@ -166,31 +168,63 @@ input {
 #second-third-features {
   background-image: url("../images/blueconcert.jpg");
   background-size: cover;
+  margin-top: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+#second-third-features p {
+  font-size: 0.9rem;
+}
+#second-third-features #whats-new {
+  width: 600px;
+}
+#second-third-features #whats-new .owl-carousel {
+  margin: 0 auto;
+}
+#second-third-features #whats-new .carousel-item {
+  background-color: #111111;
+}
+#second-third-features #whats-new .carousel-item img {
+  object-fit: cover;
+}
+#second-third-features #whats-new .carousel-item .carousel-text {
+  padding: 0px 16px 16px 16px;
+}
+#second-third-features #whats-new .owl-dot {
+  border-radius: 0;
+  width: 32px;
+  height: 16px;
+  margin: 8px;
+  border: none;
+  background-color: #111111;
+}
+#second-third-features #whats-new .owl-dot.active {
+  background-color: #0b78b1;
 }
 #second-third-features #events-container {
   background-color: #0b78b1;
   transform: skewY(-6deg) scale(0.9);
   padding: 40px 20px;
+  margin: 50px 0px;
+  height: 440px;
 }
-#second-third-features #events {
+#second-third-features .scroll-container {
+  margin-top: 16px;
   transform: skewY(6deg) scale(1);
+  height: 400px;
 }
 #second-third-features .event-item {
   background-color: #1d1d26;
   display: grid;
-  grid-template-columns: 1fr 6fr;
+  grid-template-columns: 2fr 6fr;
   grid-column-gap: 16px;
-  margin: 20px;
+  margin: 0px 16px 16px 16px;
+  width: 100%;
 }
 #second-third-features .event-item img {
   object-fit: cover;
   max-width: 100%;
   height: 100%;
-}
-#second-third-features .event-item p {
-  color: white;
 }
 #second-third-features .event-item .event-content {
   padding: 10px;
@@ -220,7 +254,6 @@ input {
 #footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: white;
 }
 #footer .footer-image-container {
   background-image: url("../images/footer-bg.jpg");
@@ -232,7 +265,7 @@ input {
   padding: 32px 64px;
   position: relative;
 }
-#footer img {
+#footer .footer-logo {
   width: 150px;
   margin: 0 auto;
 }
@@ -249,13 +282,12 @@ input {
 }
 #footer ul {
   list-style: none;
-  margin: 0;
   padding: 0;
-  margin-top: 20px;
+  margin: 30px 0px;
 }
 #footer li {
   display: inline;
-  margin: 16px;
+  margin: 8px;
   text-transform: uppercase;
 }
 #footer li:hover {
@@ -266,6 +298,10 @@ input {
   border: 2px solid #f06923;
   color: #f06923;
   margin: 0 auto;
+}
+#footer button:hover {
+  background-color: #f06923;
+  color: white;
 }
 
 @media screen and (max-width: 960px) {
@@ -289,10 +325,14 @@ input {
   #second-third-features {
     grid-template-columns: 1fr;
   }
+  #second-third-features #whats-new {
+    width: 100vw;
+  }
   #second-third-features #events-container {
     transform: skewY(-6deg) scale(1);
+  }
+  #second-third-features .scroll-container {
     width: 100%;
-    margin: 0;
   }
 
   #footer {
@@ -304,6 +344,10 @@ input {
     left: 0;
     right: 0;
     margin: 0 auto;
+  }
+  #footer .footer-image-container {
+    height: 360px;
+    width: 100%;
   }
   #footer .footer-content-container {
     padding: 32px 16%;

@@ -1,32 +1,37 @@
 $(document).ready(() => {
-  $("#search-icon").hover(() => {
-    $("#search-input").toggle(1500);
+  $("#search-icon").hover(() => {$("#search-input").toggle(1500);});
+  $('#owl').owlCarousel({
+    items : 1,
+    dotsEach : true,
   });
-  $(".owl-carousel").owlCarousel();
-  $(document).one("scroll", ()=>{
-    $("#header").addClass("scrolled-header");
-  });
+  $(document).one("scroll", () => {$("#header").addClass("scrolled-header");});
   
   $.getJSON('https://jsonplaceholder.typicode.com/posts', function(data){
-    console.log(data);
     let events = "";
     let images = ["fun", "stage", "music", "guitar", "restaurant", "drinks", "cheers", "food", "nature", "friends"]
     
     for (let i = 1; i <= 10; i++) {
-      events += `<div class="event-item"><img src="https://loremflickr.com/500/500/${images[i]}"><div class="event-content"><h3>`
-      if (data[i].title.length < 50) {
-        events += `${data[i].title}`
-      } else {
-        events += `${data[i].title.slice(0,50)}...`
-      }
-      events += `</h3><p>`
-      if (data[i].body.length < 125) {
-        events += `${data[i].body}`
-      } else {
-        events += `${data[i].body.slice(0,125)}...`
-      }
-      events += `</p></div></div>`
+      events += `<div class="event-item"><img src="https://loremflickr.com/500/500/${images[i]}"><div class="event-content"><h3>${limitTitle(data[i].title)}</h3><p>${limitBody(data[i].body)}</p></div></div>`
+      $("#events").html(events);
     }
-    $("#events").html(events);
   });
 });
+
+function limitTitle(title) {
+  let newTitle = title.length < 50 ? title : `${title.slice(0,50)}...`
+  let capitalizedNewTitle = []; 
+  newTitle.split(" ").forEach(function(word){
+    capitalizedNewTitle.push(capitalizeFirstLetter(word));
+  });
+  return capitalizedNewTitle.join(" ");
+}
+
+function limitBody(body) {
+  let newBody = body < 125 ? body : `${body.slice(0,125)}...`
+  return capitalizeFirstLetter(newBody);
+}
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
