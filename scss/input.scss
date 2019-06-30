@@ -1,10 +1,8 @@
 @import 'variables';
 
-// * {
-//   border: solid 1px red;
-// }
 html {
   scroll-behavior: smooth;
+  background-color: $primary-blue;
 }
 
 body {
@@ -15,10 +13,14 @@ body {
 
 h2 {
   color: $primary-blue;
+  font-weight: 300;
+  text-align: center;
 }
 
 h3 {
+  font-size: 1.1rem;
   color: $primary-blue;  
+  font-weight: 300;
 }  
 
 button {
@@ -45,8 +47,7 @@ input {
 #header {
   position: fixed;
   width: 100%; 
-  height: 160px;
-  background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+  z-index: 9999;
   
   .logo {
     position: absolute;
@@ -89,7 +90,19 @@ input {
   
   #search-input {
     display: none;
+    height: 30px;
+    margin-left: 10px;
   }
+}
+
+.header {
+  height: 160px;
+  background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.scrolled-header {
+  height: 88px;
+  background-color: $dark-gray;
 }
 
 #main-feature {
@@ -166,6 +179,130 @@ input {
   } 
 }
 
+#second-third-features {
+  background-image: url("../images/blueconcert.jpg");
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+  #whats-new {
+  }
+  
+  #events-container {
+    background-color: $primary-blue;
+    transform: skewY(-6deg) scale(.9);
+    padding: 40px 20px;
+  }
+  
+  #events {
+    transform: skewY(6deg) scale(1);
+  }
+  
+  .event-item {
+    background-color: $medium-gray;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-column-gap: 16px;
+    margin: 20px;
+    img {
+      object-fit: cover;
+      max-width: 100%;
+      height: 100%;
+    }
+    p {
+      color: white;
+    }
+    .event-content {
+      padding: 10px;
+    }
+  }
+  
+}
+
+
+#fourth-feature {
+  background-color: $primary-blue;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: .3rem;
+  grid-gap: .3rem;
+  grid-auto-flow: dense;
+  .card-widget-item {
+    &:nth-child(1) {
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+    &:nth-child(6) {
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+  }
+  
+  .image-container{
+    background-image: url("https://loremflickr.com/500/500/fun");
+    background-size: cover;
+  }
+}
+
+#footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+  
+  .footer-image-container {
+    background-image: url("../images/footer-bg.jpg");
+    background-size: cover;
+  }
+  
+  .footer-content-container {
+    text-align: center;
+    background-color: $dark-gray;
+    padding: 32px 64px;
+    position: relative;
+  }
+  
+  img {
+    width: 150px;
+    margin: 0 auto;
+  }
+  
+  .footer-divider {
+    text-align: left;
+    width: 64px;
+    height: 64px;
+    background-color: $dark-gray;
+    transform: rotate(45deg);
+    position: absolute;
+    left: -32px;
+    top: 45%;
+    z-index: 999;
+    
+  }
+  
+  ul {
+    list-style: none;  
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  li {
+    display: inline;
+    margin: 16px;
+    text-transform: uppercase;
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+  
+  button {
+    background-color: transparent;
+    border: 2px solid $primary-orange;
+    color: $primary-orange;
+    margin: 0 auto;
+  }
+}
+
 @media screen and (max-width: 960px) {
   #header {
     .logo {
@@ -184,6 +321,36 @@ input {
   #main-feature {
     p {
       width: 352px;
+    }
+  }
+  
+  #second-third-features {
+    grid-template-columns: 1fr;
+    
+    #events-container {
+      transform: skewY(-6deg) scale(1);
+      width: 100%;
+      margin: 0;
+    }
+  }
+  
+  #footer {
+    grid-template-columns: 1fr;
+       
+    .footer-divider {
+      position: absolute;
+      top: -32px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+    
+    .footer-content-container {
+      padding: 32px 16%;
+    }
+    
+    li {
+      display: block;
     }
   }
 }
