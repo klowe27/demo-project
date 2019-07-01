@@ -1,16 +1,16 @@
 # Saffire Demo Project
 
-#### Saffire Demo Project, 6.29.2019
+#### Saffire Demo Project, 7.1.2019
 
 #### By Kristin Brewer-Lowe
 
 ## Description
 
-Responsive SPA application for Saffire Demo Project using Sass, Jquery. 
+Responsive SPA application for Saffire Demo Project using HTML, Sass and Jquery. 
 
 ## Setup/Installation Requirements
 
-* To clone this project, in the terminal use command `$ git clone https://github.com/klowe27/saffire-demo-project`
+* To clone this project, in the terminal use command `$ git clone https://github.com/klowe27/demo-project.git`
 * After cloning, open index.html in any web browser
 * To update CSS, make changes in scss/input.scss and use command `$ sass scss/input.scss css/output.css` to build the css file. 
 
