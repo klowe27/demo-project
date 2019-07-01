@@ -1,10 +1,18 @@
 $(document).ready(() => {
   $("#search-icon").hover(() => {$("#search-input").toggle(1500);});
+  
   $('#owl').owlCarousel({
     items : 1,
     dotsEach : true,
   });
+  
   $(document).one("scroll", () => {$("#header").addClass("scrolled-header");});
+  
+  $(".card-widget-item").hover(e => {
+    $(e.target).children().toggle();
+    $(e.target).toggleClass('card-overlay');
+  });
+  
   
   $.getJSON('https://jsonplaceholder.typicode.com/posts', function(data){
     let events = "";
