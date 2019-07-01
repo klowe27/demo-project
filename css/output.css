@@ -42,18 +42,18 @@ h3 {
 }
 
 button {
-  width: 150px;
+  width: 144px;
   height: 40px;
   border-radius: 20px;
   font-size: 1rem;
   background-color: #0b78b1;
   border: none;
-  margin: 15px;
-  transition: 1s;
+  margin: 16px;
   color: white;
+  transition: 1s;
 }
 button:hover {
-  box-shadow: 1px 2px 2px 2px rgba(15, 15, 15, 0.5);
+  box-shadow: 1px 2px 2px 2px rgba(17, 17, 17, 0.5);
 }
 
 #header {
@@ -124,7 +124,7 @@ button:hover {
   border: none;
   border-radius: 16px;
   vertical-align: text-top;
-  height: 20px;
+  height: 24px;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -174,13 +174,13 @@ button:hover {
 }
 #main-feature .explore-word {
   position: absolute;
-  top: 15px;
+  top: 16px;
   left: 0px;
   right: 0px;
   margin: 0 auto;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: white;
 }
 #main-feature .explore-arrow {
@@ -190,7 +190,7 @@ button:hover {
   border-bottom: 1px solid white;
   transform: rotate(45deg);
   position: absolute;
-  bottom: 18px;
+  bottom: 16px;
   left: 0px;
   right: 0px;
   margin: 0 auto;
@@ -203,7 +203,7 @@ button:hover {
   margin-top: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-bottom: 100px;
+  padding-bottom: 96px;
 }
 @media screen and (max-width: 960px) {
   #second-third-features {
@@ -227,7 +227,7 @@ button:hover {
 }
 #second-third-features #whats-new .carousel-item img {
   object-fit: cover;
-  height: 240px;
+  height: 248px;
   width: 100%;
 }
 #second-third-features #whats-new .carousel-item .carousel-text {
@@ -251,9 +251,9 @@ button:hover {
 #second-third-features #events-container {
   background-color: #0b78b1;
   transform: skewY(-3deg);
-  padding: 25px;
+  padding: 24px;
   margin: 0 auto;
-  height: 340px;
+  height: 360px;
   width: 40vw;
 }
 @media screen and (max-width: 960px) {
@@ -264,7 +264,7 @@ button:hover {
 #second-third-features .scroll-container {
   transform: skewY(3deg) scale(1);
   margin-top: 16px;
-  height: 320px;
+  height: 328px;
 }
 #second-third-features .event-item {
   background-color: #1d1d26;
@@ -286,7 +286,7 @@ button:hover {
   background-color: #0b78b1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-auto-rows: 200px;
+  grid-auto-rows: 256px;
   margin: 0.3rem;
   grid-gap: 0.3rem;
   grid-auto-flow: dense;
@@ -314,10 +314,27 @@ button:hover {
   }
 }
 #fourth-feature .image-container {
-  background-image: url("../images/image2.jpeg");
   height: 100%;
   width: auto;
   background-size: cover;
+}
+#fourth-feature .image1 {
+  background-image: url("../images/image1.jpeg");
+}
+#fourth-feature .image2 {
+  background-image: url("../images/image2.jpeg");
+}
+#fourth-feature .image3 {
+  background-image: url("../images/image3.jpeg");
+}
+#fourth-feature .image4 {
+  background-image: url("../images/image4.jpeg");
+}
+#fourth-feature .image5 {
+  background-image: url("../images/image5.jpeg");
+}
+#fourth-feature .image6 {
+  background-image: url("../images/image6.jpeg");
 }
 #fourth-feature .card-content {
   text-align: center;
@@ -338,7 +355,7 @@ button:hover {
   width: 200px;
   height: 24px;
   position: absolute;
-  bottom: 20px;
+  bottom: 24px;
 }
 #fourth-feature .card-widget-description {
   display: none;
@@ -349,7 +366,7 @@ button:hover {
 #fourth-feature .more-button {
   display: none;
   margin: 0 auto;
-  width: 140px;
+  width: 144px;
   border-radius: 20px;
   font-size: 1rem;
   background-color: #f06923;
@@ -407,7 +424,6 @@ button:hover {
   position: absolute;
   left: -32px;
   top: 45%;
-  z-index: 999;
 }
 @media screen and (max-width: 960px) {
   #footer .footer-divider {

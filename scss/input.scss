@@ -43,17 +43,17 @@ h3 {
 }  
 
 button {
-  width: 150px;
+  width: 144px;
   height: 40px;
   border-radius: 20px;
   font-size: 1rem;
   background-color: $primary-blue;
   border: none;
-  margin: 15px;
-  transition: 1s;
+  margin: 16px;
   color: white;
+  transition: 1s;
   &:hover {
-    box-shadow: 1px 2px 2px 2px rgba(15,15,15,.5);
+    box-shadow: 1px 2px 2px 2px $dark-gray-transparent;
   }
 }
 
@@ -126,8 +126,8 @@ button {
     border: none;
     border-radius: 16px;
     vertical-align: text-top;
-    height: 20px;
-    background-color: rgba(255,255,255,.6);
+    height: 24px;
+    background-color: $white-transparent;
   }
 }
 
@@ -178,13 +178,13 @@ button {
   
   .explore-word {
     position: absolute;
-    top: 15px;
+    top: 16px;
     left: 0px;
     right: 0px;
     margin: 0 auto;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: .8rem;
+    font-size: .7rem;
     color: white;
   }
   
@@ -195,7 +195,7 @@ button {
     border-bottom: 1px solid white;
     transform: rotate(45deg);
     position: absolute;
-    bottom: 18px;
+    bottom: 16px;
     left: 0px;
     right: 0px;
     margin: 0 auto;
@@ -209,7 +209,7 @@ button {
   margin-top: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-bottom: 100px;
+  padding-bottom: 96px;
   @include mediaQuery(960px){
     grid-template-columns: 1fr;
   }
@@ -224,14 +224,14 @@ button {
     @include mediaQuery(960px){
       width: 90vw;
     }
-
+    
     .carousel-item {
       background-color: $dark-gray;
-        img {
-          object-fit: cover;
-          height: 240px;
-          width: 100%;
-        }
+      img {
+        object-fit: cover;
+        height: 248px;
+        width: 100%;
+      }
       
       .carousel-text {
         padding: 16px;
@@ -242,7 +242,7 @@ button {
       text-align: center;
       margin-top: 16px;
     }
-  
+    
     .owl-dot {
       border-radius: 0;
       width: 32px;
@@ -259,9 +259,9 @@ button {
   #events-container {
     background-color: $primary-blue;
     transform: skewY(-3deg);
-    padding: 25px;
+    padding: 24px;
     margin: 0 auto;
-    height: 340px;
+    height: 360px;
     width: 40vw;
     @include mediaQuery(960px){
       width: auto;
@@ -271,7 +271,7 @@ button {
   .scroll-container {
     transform: skewY(3deg) scale(1);
     margin-top: 16px;
-    height: 320px;
+    height: 328px;
   }
   
   .event-item {
@@ -296,7 +296,7 @@ button {
   background-color: $primary-blue;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-auto-rows: 200px;
+  grid-auto-rows: 256px;
   margin: .3rem;
   grid-gap: .3rem;
   grid-auto-flow: dense;
@@ -306,7 +306,6 @@ button {
   
   .card-widget-item {
     position: relative;
-
     &:nth-child(1) {
       grid-row: span 2;
       grid-column: span 2;
@@ -322,10 +321,33 @@ button {
   }
   
   .image-container{
-    background-image: url("../images/image#{random(6)}.jpeg");
     height: 100%;
     width: auto;
     background-size: cover;
+  }
+  
+  .image1 {
+    background-image: url("../images/image1.jpeg");
+  }
+  
+  .image2 {
+    background-image: url("../images/image2.jpeg");
+  }
+  
+  .image3 {
+    background-image: url("../images/image3.jpeg");
+  }
+  
+  .image4 {
+    background-image: url("../images/image4.jpeg");
+  }
+  
+  .image5 {
+    background-image: url("../images/image5.jpeg");
+  }
+  
+  .image6 {
+    background-image: url("../images/image6.jpeg");
   }
   
   .card-content {
@@ -341,8 +363,6 @@ button {
     width: 100%;
   }
   
-
-  
   .card-widget-title {
     background-color: $primary-blue-transparent;
     color: white;
@@ -351,7 +371,7 @@ button {
     width: 200px;
     height: 24px;
     position: absolute;
-    bottom: 20px;
+    bottom: 24px;
   }
   
   .card-widget-description {
@@ -364,7 +384,7 @@ button {
   .more-button {
     display: none;
     margin: 0 auto;
-    width: 140px;
+    width: 144px;
     border-radius: 20px;
     font-size: 1rem;
     background-color: $primary-orange;
@@ -420,7 +440,6 @@ button {
     position: absolute;
     left: -32px;
     top: 45%;
-    z-index: 999;
     @include mediaQuery(960px){
       position: absolute;
       top: -32px;
