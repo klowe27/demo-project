@@ -16,7 +16,9 @@ $(document).ready(() => {
     $(this).addClass(`${imageClass}`);
   });
   
-  $.getJSON('https://jsonplaceholder.typicode.com/posts', function(data){
+  $.ajax({
+    url: 'https://jsonplaceholder.typicode.com/posts',
+  }).done(function(data){
     let events = "";
     let images = ["fun", "stage", "music", "guitar", "restaurant", "drinks", "cheers", "food", "nature", "friends"];
     
